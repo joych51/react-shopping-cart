@@ -58,13 +58,19 @@ a {
   text-align: center;
 }
 
-main a:visited {
+main {
   color: black;
 }
 
-a:hover {
+main a:hover {
+  color: red;
+}
+
+main a:visited {
   color: grey;
 }
+
+
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -146,4 +152,17 @@ button:focus {
   outline: none;
   box-shadow: 0 0 0 1px black;
   transform: scale(1.02);
+}
+
+/* Filter */
+.filter {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+  justify-content: space-between;
+}
+
+.filter div {
+  flex: 1;
 }

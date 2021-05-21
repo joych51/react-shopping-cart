@@ -59,7 +59,7 @@
             "image": "/images/dress7.jpg",
             "title": "Thome Browne",
             "description": "RWB-Stripe Cropped Trousers",
-            "price": 4620,
+            "price": 630,
             "availableSizes": ["M", "L", "XL", "XXL"]
         },
 
@@ -68,7 +68,7 @@
             "image": "/images/dress8.jpg",
             "title": "Thome Browne",
             "description": "4-Bar Unconstructed Chino Trousers",
-            "price": 4620,
+            "price": 870,
             "availableSizes": ["M", "L", "XL", "XXL"]
         }
     ]

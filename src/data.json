@@ -3,7 +3,7 @@
         {
             "_id": "dress1",
             "image": "/images/dress1.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "4-Bar Grey Jersey Sweatshirt",
             "price": 530,
             "availableSizes": ["XL", "XXL"]
@@ -12,7 +12,7 @@
         {
             "_id": "dress2",
             "image": "/images/dress2.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "Classic Sports blazer",
             "price": 1480,
             "availableSizes": ["S", "M"]
@@ -21,7 +21,7 @@
         {
             "_id": "dress3",
             "image": "/images/dress3.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "Patchwork-Pattern Sport Blazer",
             "price": 5320,
             "availableSizes": ["M", "L", "XL", "XXL"]
@@ -30,7 +30,7 @@
         {
             "_id": "dress4",
             "image": "/images/dress4.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "4-Bar Stripe Bomber Jacket",
             "price": 2927,
             "availableSizes": ["S", "M", "L"]
@@ -39,7 +39,7 @@
         {
             "_id": "dress5",
             "image": "/images/dress5.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "4-Bar Shearling Jacket",
             "price": 4620,
             "availableSizes": ["M", "L", "XL", "XXL"]
@@ -48,7 +48,7 @@
         {
             "_id": "dress6",
             "image": "/images/dress6.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "Tweed Single-Breasted Blazer",
             "price": 3050,
             "availableSizes": ["S", "M", "XL", "XXL"]
@@ -57,7 +57,7 @@
         {
             "_id": "dress7",
             "image": "/images/dress7.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "RWB-Stripe Cropped Trousers",
             "price": 630,
             "availableSizes": ["M", "L", "XL", "XXL"]
@@ -66,7 +66,7 @@
         {
             "_id": "dress8",
             "image": "/images/dress8.jpg",
-            "title": "Thome Browne",
+            "title": "Thom Browne",
             "description": "4-Bar Unconstructed Chino Trousers",
             "price": 870,
             "availableSizes": ["M", "L", "XL", "XXL"]

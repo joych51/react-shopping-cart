@@ -255,3 +255,47 @@ input {
   border-style: groove;
   outline: none;
 }
+
+/* Product Details */
+.product-details {
+  margin-top: 15rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+  text-align: center;
+  align-items: center;
+}
+
+.product-details img {
+  max-height: 100vh;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.product-details-description {
+  flex: 1 1;
+  margin: 1rem;
+}
+
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 10;
+}
+
+#modal-price {
+  margin: 0 auto;
+  max-width: 40rem;
+}
+
+#modal-price button {
+  border-style: none;
+}
+
+#modal-price button:hover {
+  cursor: pointer;
+  color: black;
+  transform: scale(1.02);
+}

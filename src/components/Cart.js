@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import formatCurrency from '../util';
+import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal';
 
 export default class Cart extends Component {
     constructor(props) {
@@ -32,31 +34,33 @@ export default class Cart extends Component {
             <div>
                 {cartItems.length === 0
                     ? <div className="cart cart-header">Cart is empty</div>
-                    : <div className="cart cart-header">You have {cartItems.length} in the cart{" "}</div>
+                    : <div className="cart cart-header">You have {cartItems.length} items in the cart{" "}</div>
                 }
                 <div>
                     <div className="cart">
-                        <ul className="cart-items">
-                            {cartItems.map(item => (
-                                <li key={cartItems._id} >
-                                    <div>
-                                        <img src={item.image}
-                                            alt={item.title} />
-                                    </div>
-                                    <div>
-                                        <div className = "product-title">{item.title}</div>
-                                        <div className="desc">{item.description}</div>
-                                        <div className="right">
-                                            {formatCurrency(item.price)} x {item.count} {" "}
-                                            <button
-                                                onClick={() => this.props.removeFromCart(item)}>
-                                                Remove
-                                            </button>
+                        <Fade left cascade={true}>
+                            <ul className="cart-items">
+                                {cartItems.map(item => (
+                                    <li key={cartItems._id} >
+                                        <div>
+                                            <img src={item.image}
+                                                alt={item.title} />
                                         </div>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
+                                        <div>
+                                            <div className="product-title">{item.title}</div>
+                                            <div className="desc">{item.description}</div>
+                                            <div className="right">
+                                                {formatCurrency(item.price)} x {item.count} {" "}
+                                                <button
+                                                    onClick={() => this.props.removeFromCart(item)}>
+                                                    Remove
+                                            </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </Fade>
                     </div>
                     {cartItems.length !== 0 && (
                         <div>
@@ -67,46 +71,50 @@ export default class Cart extends Component {
                                         {formatCurrency(cartItems.reduce((a, c) => a + (c.price * c.count), 0))}
                                     </div>
                                     <button
-                                        onClick={() => { this.setState({ showCheckout: true }) }}
+                                        onClick={() => {
+                                            this.setState({ showCheckout: !this.state.showCheckout });
+                                        }}
                                         className="button-primary">
                                         Proceed
                                 </button>
                                 </div>
                             </div>
                             {this.state.showCheckout && (
-                                <div className="cart">
-                                    <form onSubmit={this.createOrder}>
-                                        <ul className="form-container">
-                                            <li>
-                                                <input
-                                                    name="email"
-                                                    type="email"
-                                                    placeholder="Email"
-                                                    required onChange={this.handleInput}>
-                                                </input>
-                                            </li>
-                                            <li>
-                                                <input
-                                                    name="name"
-                                                    type="text"
-                                                    placeholder="Full Name"
-                                                    required onChange={this.handleInput}>
-                                                </input>
-                                            </li>
-                                            <li>
-                                                <input
-                                                    name="address"
-                                                    type="address"
-                                                    placeholder="Address"
-                                                    required onChange={this.handleInput}>
-                                                </input>
-                                            </li>
-                                            <li>
-                                                <button className = "button-primary" type = "submit">Checkout</button>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div>
+                                <Zoom>
+                                    <div className="cart">
+                                        <form onSubmit={this.createOrder}>
+                                            <ul className="form-container">
+                                                <li>
+                                                    <input
+                                                        name="email"
+                                                        type="email"
+                                                        placeholder="Email"
+                                                        required onChange={this.handleInput}>
+                                                    </input>
+                                                </li>
+                                                <li>
+                                                    <input
+                                                        name="name"
+                                                        type="text"
+                                                        placeholder="Full Name"
+                                                        required onChange={this.handleInput}>
+                                                    </input>
+                                                </li>
+                                                <li>
+                                                    <input
+                                                        name="address"
+                                                        type="address"
+                                                        placeholder="Address"
+                                                        required onChange={this.handleInput}>
+                                                    </input>
+                                                </li>
+                                                <li>
+                                                    <button className="button-primary" type="submit">Checkout</button>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </Zoom>
                             )}
                         </div>
                     )}

@@ -113,6 +113,14 @@ main a:visited {
   font-weight: bold;
 }
 
+.product-desc {
+  color: gray;
+}
+
+.product-desc:hover {
+  color: black;
+}
+
 .product img {
   max-width: 30rem;
   max-height: 30rem;

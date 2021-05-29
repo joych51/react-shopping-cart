@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import formatCurrency from '../util';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal';
+import { connect } from 'react-redux';
+import { removeFromCart } from '../actions/cartActions';
 
-export default class Cart extends Component {
+class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,8 +42,8 @@ export default class Cart extends Component {
                     <div className="cart">
                         <Fade left cascade={true}>
                             <ul className="cart-items">
-                                {cartItems.map(item => (
-                                    <li key={cartItems._id} >
+                                {cartItems.map((item) => (
+                                    <li key={item._id} >
                                         <div>
                                             <img src={item.image}
                                                 alt={item.title} />
@@ -52,6 +54,7 @@ export default class Cart extends Component {
                                             <div className="right">
                                                 {formatCurrency(item.price)} x {item.count} {" "}
                                                 <button
+                                                    className ="button"
                                                     onClick={() => this.props.removeFromCart(item)}>
                                                     Remove
                                             </button>
@@ -70,7 +73,7 @@ export default class Cart extends Component {
                                         Total: {" "}
                                         {formatCurrency(cartItems.reduce((a, c) => a + (c.price * c.count), 0))}
                                     </div>
-                                    <button
+                                     <button
                                         onClick={() => {
                                             this.setState({ showCheckout: !this.state.showCheckout });
                                         }}
@@ -120,8 +123,10 @@ export default class Cart extends Component {
                     )}
                 </div>
             </div>
-
-
         )
     }
 }
+
+export default connect((state) => ({
+    cartItems: state.cart.cartItems,
+}), {removeFromCart})(Cart);

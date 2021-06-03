@@ -1,9 +1,9 @@
 import React from "react";
-import Filter from "./components/Filter";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
 import store from "./store";
+import Home from './pages/Home';
+import Admin from './pages/Admin';
 import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
   // constructor() {
@@ -84,27 +84,20 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
+        <Router>
         <div className="grid-container">
           <header>
-            <a href="/">React Shopping Cart</a>
+            <Link to="/">React Shopping Cart</Link>
+            <Link to="/admin">Admin</Link>
           </header>
           <main>
-            <div className="content">
-              <div className="main">
-                <Filter />
-                <Products/>
-              </div>
-              <div className="sidebar">
-                <Cart
-                  // cartItems={this.state.cartItems}
-                  // removeFromCart={this.removeFromCart}
-                  // createOrder={this.createOrder}
-                />
-              </div>
-            </div>
+            <Route path = "/admin" component = { Admin } />
+            <Route path ="/" component = { Home } exact />
+            
           </main>
           <footer>All right is reserved.</footer>
         </div>
+        </Router>
       </Provider>
     );
   }

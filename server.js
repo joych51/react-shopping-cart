@@ -58,8 +58,6 @@ const Order = mongoose.model("order", new mongoose.Schema({
     timestamps: true
 }))
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log("serve at http://localhost:3000"));
 
 app.post("/api/orders", async(req, res) => {
     if(!req.body.name || 
@@ -72,3 +70,16 @@ app.post("/api/orders", async(req, res) => {
     const order = await Order(req.body).save();
     res.send(order);
 });
+
+app.get("/api/orders", async(req, res) => {
+    const orders = await Order.find({});
+    res.send(orders);
+});
+
+app.delete("/api/orders/:id", async(req, res) => {
+    const order = await Order.findByIdAndDelete(req.params.id);
+    res.send(order);
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log("serve at http://localhost:3000"));
